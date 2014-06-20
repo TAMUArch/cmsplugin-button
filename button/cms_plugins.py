@@ -9,7 +9,7 @@ from button.models import ButtonPlugin
 
 class CMSButtonPlugin(CMSPluginBase):
     model = ButtonPlugin
-    name = _('Button Plugin')
+    name = _('Button')
     render_template = 'cms/plugins/button/button.html'
 
     def render(self, context, instance, placeholder):
