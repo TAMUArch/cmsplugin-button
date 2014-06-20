@@ -2,12 +2,6 @@
   <style>
     #button{{ id }} {
       background-image: url('{{ object.foreground.url }}');
-      height: 150px;
-      width: 150px;
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      background-size: 100%;
     }
     #button{{ id }}:hover {
       background-image:url('{{ object.background.url }}');
@@ -29,7 +23,7 @@
   </style>
 
   <a alt="{{ object.title }}" href="{{ object.link }}">
-    <div id="button{{ id }}">
+    <div class="cmsbutton" id="button{{ id }}">
       &nbsp;
     </div>
     <div id="buttonTitle{{ id }}">
