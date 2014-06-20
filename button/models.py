@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import RegexValidator
+
 from cms.models import CMSPlugin
 
 

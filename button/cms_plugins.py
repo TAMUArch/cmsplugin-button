@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
-from button import ButtonPlugin
+from button.models import ButtonPlugin
 
 
 

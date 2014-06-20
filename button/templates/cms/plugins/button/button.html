@@ -1,3 +1,19 @@
-<span>
-  {{ object.title }}
-</span>
+<style>
+#button{{ object.pk }} {
+  background-image: url('{{ object.foreground.url }}');
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+#button{{ object.pk }}:hover {
+  background-image:url('{{ object.background.url }}');
+}
+</style>
+
+<a href="{{ object.link }}">
+  <div id="button{{ object.pk }}">
+  &nbsp;
+</div>
+</a>
