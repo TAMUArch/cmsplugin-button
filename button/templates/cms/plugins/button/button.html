@@ -1,37 +1,39 @@
-<style>
-#button{{ object.pk }} {
-  background-image: url('{{ object.foreground.url }}');
-  height: 150px;
-  width: 150px;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  background-size: 100%;
-}
-#button{{ object.pk }}:hover {
-  background-image:url('{{ object.background.url }}');
-}
+{% with object.pk as id %}
+  <style>
+    #button{{ id }} {
+      background-image: url('{{ object.foreground.url }}');
+      height: 150px;
+      width: 150px;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-size: 100%;
+    }
+    #button{{ id }}:hover {
+      background-image:url('{{ object.background.url }}');
+    }
 
-#buttonTitle{{ object.pk }} {
-  display: none;
-}
+    #buttonTitle{{ id }} {
+      display: none;
+    }
 
-@media (max-width: 767px) {
-  #button{{ object.pk }} {
-    display: none;
-  }
+    @media (max-width: 767px) {
+      #button{{ id }} {
+        display: none;
+      }
 
-  #buttonTitle{{ object.pk }} {
-    display: block;
-  }
-}
-</style>
+      #buttonTitle{{ id }} {
+        display: block;
+      }
+    }
+  </style>
 
-<a alt="{{ object.title }}" href="{{ object.link }}">
-  <div id="button{{ object.pk }}">
-  &nbsp;
-</div>
-<div id="buttonTitle{{ object.pk }}">
-  {{ object.title }}
-</div>
-</a>
+  <a alt="{{ object.title }}" href="{{ object.link }}">
+    <div id="button{{ id }}">
+      &nbsp;
+    </div>
+    <div id="buttonTitle{{ id }}">
+      {{ object.title }}
+    </div>
+  </a>
+{% endwith %}
