@@ -11,10 +11,10 @@ class Migration(SchemaMigration):
         # Adding model 'ButtonPlugin'
         db.create_table(u'cmsplugin_buttonplugin', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('background', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
-            ('foreground', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('link', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('foreground', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True)),
+            ('background', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=255, null=True)),
+            ('link', self.gf('django.db.models.fields.CharField')(max_length=255, null=True)),
         ))
         db.send_create_signal(u'button', ['ButtonPlugin'])
 
@@ -27,11 +27,11 @@ class Migration(SchemaMigration):
     models = {
         u'button.buttonplugin': {
             'Meta': {'object_name': 'ButtonPlugin', 'db_table': "u'cmsplugin_buttonplugin'", '_ormbases': ['cms.CMSPlugin']},
-            'background': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'background': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True'}),
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
-            'foreground': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'link': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
+            'foreground': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True'}),
+            'link': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True'})
         },
         'cms.cmsplugin': {
             'Meta': {'object_name': 'CMSPlugin'},

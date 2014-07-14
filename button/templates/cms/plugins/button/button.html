@@ -22,12 +22,12 @@
     }
   </style>
 
-  <a alt="{{ object.title }}" href="{{ object.link }}">
+  <a href="{{ object.link }}">
+    <h3 id="buttonTitle{{ id }}">
+      {{ object.title }}
+    </h3>
     <div class="cmsbutton" id="button{{ id }}">
       &nbsp;
-    </div>
-    <div id="buttonTitle{{ id }}">
-      {{ object.title }}
     </div>
   </a>
 {% endwith %}
